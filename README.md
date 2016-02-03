@@ -1,4 +1,4 @@
-# SGRID Compliance Checker Plugin
+# SGRID Compliance Checker Plugin [![Build Status](https://travis-ci.org/ioos/cc-plugin-sgrid.svg?branch=master)](https://travis-ci.org/ioos/cc-plugin-sgrid)
 
 This is a checker for [SGRID](https://github.com/sgrid/sgrid) files
 
