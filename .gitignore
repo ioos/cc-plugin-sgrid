@@ -1,1 +1,7 @@
 *.~
+*.pyc
+*.swp
+build
+dist
+cc-plugin-sgrid.egg-info
+*.egg-info

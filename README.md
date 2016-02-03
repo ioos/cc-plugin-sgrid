@@ -1,6 +1,6 @@
 # SGRID Compliance Checker Plugin
 
-This is a checker for [SGRID]((https://github.com/sgrid/sgrid)) files
+This is a checker for [SGRID](https://github.com/sgrid/sgrid) files
 
 It works with the [IOOS Compliance Checker](https://github.com/ioos/compliance-checker)
 
