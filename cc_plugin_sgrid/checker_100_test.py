@@ -34,14 +34,21 @@ class TestSgridChecker100(unittest.TestCase):
         r = self.check.check_grid_variable(ncd)
         assert r.value == (1, 1)
 
+    def test_check_invalid_grid_variable(self):
+        ncd = self.nc(rs('cc_plugin_sgrid', os.path.join('resources', 'roms.nc')))
         ncd.variables['grid'].cf_role = 'blah'
         r = self.check.check_grid_variable(ncd)
         assert r.value == (0, 1)
 
+    def test_check_mesh_toplogy_grid_variable(self):
+        ncd = self.nc(rs('cc_plugin_sgrid', os.path.join('resources', 'roms.nc')))
         ncd.variables['grid'].cf_role = 'mesh_toplogy'
         r = self.check.check_grid_variable(ncd)
-        assert r.value == (0, 1)        
+        assert r.value == (0, 1)
 
+
+    def test_check_no_cf_role_variable(self):
+        ncd = self.nc(rs('cc_plugin_sgrid', os.path.join('resources', 'roms.nc')))
         del ncd.variables['grid'].cf_role
         r = self.check.check_grid_variable(ncd)
         assert r.value == (0, 1)        
