@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-from __future__ import with_statement
 from setuptools import setup, find_packages
 
 
@@ -13,7 +11,7 @@ def version():
     with open('VERSION') as f:
         return f.read().strip()
 
-reqs = [line.strip() for line in open('requirements/pip/base.txt')]
+reqs = [line.strip() for line in open('requirements.txt')]
 
 setup(
     name                 = "cc-plugin-sgrid",
