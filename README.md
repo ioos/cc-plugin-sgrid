@@ -1,4 +1,6 @@
-# SGRID Compliance Checker Plugin [![Build Status](https://travis-ci.org/ioos/cc-plugin-sgrid.svg?branch=master)](https://travis-ci.org/ioos/cc-plugin-sgrid)
+# SGRID Compliance Checker Plugin
+
+[![Full Tests](https://github.com/ioos/cc-plugin-sgrid/actions/workflows/tests.yml/badge.svg)](https://github.com/ioos/cc-plugin-sgrid/actions/workflows/tests.yml)
 
 This is a checker for [SGRID](https://github.com/sgrid/sgrid) files
 
@@ -8,16 +10,9 @@ It works with the [IOOS Compliance Checker](https://github.com/ioos/compliance-c
 ## Installation
 
 
-#### `conda` (prefered)
+#### `conda` (preferred)
 
 ```bash
-$ source activate [your_env]
-$ conda install -c axiom-data-science cc-plugin-sgrid
-```
-
-#### `pip`
-
-```bash
-$ workon [your_env]
-$ pip install cc-plugin-sgrid
+conda activate [your_env]
+conda install cc-plugin-sgrid --channel conda-forge
 ```
