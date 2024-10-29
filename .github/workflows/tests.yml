@@ -3,22 +3,24 @@ name: Full Tests
 on:
   pull_request:
   push:
-    branches: [main]
 
 jobs:
   run:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13" ]
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
       fail-fast: false
+    defaults:
+      run:
+        shell: bash -l {0}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup Micromamba ${{ matrix.python-version }}
-      uses: mamba-org/setup-micromamba@v1
+      uses: mamba-org/setup-micromamba@v2
       with:
         environment-name: TEST
         init-shell: bash
