@@ -8,7 +8,7 @@ It works with the [IOOS Compliance Checker](https://github.com/ioos/compliance-c
 ## Installation
 
 
-#### `conda` (prefered)
+#### `conda` (preferred)
 
 ```bash
 $ source activate [your_env]
