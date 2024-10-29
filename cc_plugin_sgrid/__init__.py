@@ -1,5 +1,6 @@
+"""SGRID Compliance-Checker Plugin."""
+
 import logging
-import os
 
 from compliance_checker.base import BaseNCCheck, Result
 
@@ -14,6 +15,8 @@ logger.addHandler(logging.NullHandler())
 
 
 class SgridChecker(BaseNCCheck):
+    """SgridChecker."""
+
     _cc_spec = "SGRID"
     _cc_url = "https://github.com/ioos/cc-plugin-sgrid"
     _cc_author = "Kyle Wilcox <kyle@axiomdatascience.com>"
@@ -21,11 +24,13 @@ class SgridChecker(BaseNCCheck):
 
     @classmethod
     def beliefs(cls):
+        """Beliefs."""
         return {}
 
     @classmethod
     def make_result(cls, level, score, out_of, name, messages):
+        """Make results."""
         return Result(level, (score, out_of), name, messages)
 
-    def setup(self, ds):
+    def setup(self, ds):  # noqa: D102
         pass

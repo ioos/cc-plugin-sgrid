@@ -11,9 +11,7 @@ logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
 
-romsnc = (
-    Path(__file__).absolute().parent.parent.joinpath("resources", "roms.nc")
-)
+romsnc = Path(__file__).absolute().parent.parent.joinpath("resources", "roms.nc")
 
 
 @pytest.fixture
@@ -131,25 +129,17 @@ def test_check_face_dimension_dimensions(check, nc):
 
     nc.variables[
         "grid"
-    ].face_dimensions = (
-        "xi_rho: xi_psi (padding: NOTCORRECT) eta_rho: eta_psi (padding: both)"
-    )
+    ].face_dimensions = "xi_rho: xi_psi (padding: NOTCORRECT) eta_rho: eta_psi (padding: both)"
     r = check.check_face_dimensions_dimensions(nc)
     assert r.value == (0, 1)
 
     nc.variables[
         "grid"
-    ].face_dimensions = (
-        "xi_rho: xi_psi (NOTPADDING: both) eta_rho: eta_psi (padding: both)"
-    )
+    ].face_dimensions = "xi_rho: xi_psi (NOTPADDING: both) eta_rho: eta_psi (padding: both)"
     r = check.check_face_dimensions_dimensions(nc)
     assert r.value == (0, 1)
 
-    nc.variables[
-        "grid"
-    ].face_dimensions = (
-        "xi_rho: xi_psi (padding: low) eta_rho: eta_psi (padding: high)"
-    )
+    nc.variables["grid"].face_dimensions = "xi_rho: xi_psi (padding: low) eta_rho: eta_psi (padding: high)"
     r = check.check_face_dimensions_dimensions(nc)
     assert r.value == (1, 1)
 
