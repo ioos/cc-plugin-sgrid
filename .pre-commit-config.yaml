@@ -28,7 +28,7 @@ repos:
   hooks:
     - id: codespell
       args:
-        - --ignore-words-list=pres
+        - --ignore-words-list=pres,nd
       exclude: >
           (?x)^(
               .*\.xml|
