@@ -1,5 +1,12 @@
-include VERSION
-include LICENSE
 include README.md
+include *.txt
 recursive-include cc_plugin_sgrid *.py
 recursive-include requirements *.txt
+
+exclude .gitignore
+exclude .pre-commit-config.yaml
+exclude *.yaml
+exclude *.yml
+recursive-exclude cc_plugin_sgrid *.nc
+exclude cc_plugin_sgrid/_version.py
+exclude ruff.toml

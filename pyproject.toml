@@ -49,7 +49,7 @@ packages = [
   "cc_plugin_sgrid",
 ]
 license-files = [
-  "LICENSE",
+  "LICENSE.txt",
 ]
 zip-safe = false
 include-package-data = true
