@@ -42,10 +42,7 @@ class SgridChecker100(SgridChecker):
         if len(grids) == 1:
             score += 1
         elif len(grids) > 1:
-            m = (
-                'Only one variable with the attribute name "cf_role" '
-                'and value of "grid_toplogy" is allowed'
-            )
+            m = 'Only one variable with the attribute name "cf_role" and value of "grid_toplogy" is allowed'
             messages.append(m)
         elif len(grids) < 1:
             m = 'A variable with the attribute name "cf_role" and value of "grid_toplogy" must be present'
